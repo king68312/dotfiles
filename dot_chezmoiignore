@@ -1,0 +1,5 @@
+.ssh/*
+.config/gnupg/*
+.netrc
+.aws/*
+.gcloud/*
