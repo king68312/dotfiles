@@ -1,0 +1,37 @@
+# グローバル設定（各自の環境に合わせて調整してください）
+separator=true
+separator_block_width=15
+# 現在の時間を表示
+[jihou]
+command=cat /tmp/jihou_message 2>/dev/null
+interval=once
+signal=12
+
+[time]
+command=date '+%Y-%m-%d %H:%M'
+interval=1
+
+
+# 音量表示
+[volume]
+command=$HOME/.config/i3blocks/scripts/volume.sh
+interval=once
+signal=10
+# ※音量変更時に `pkill -RTMIN+10 i3blocks` を実行すると即座に反映されます
+
+# 明るさ表示
+[brightness]
+command=$HOME/.config/i3blocks/scripts/brightness_screen.sh
+interval=once
+signal=11
+# ※明るさ変更時に `pkill -RTMIN+11 i3blocks` を実行すると即座に反映されます
+
+# 電池量表示
+[battery]
+command=$HOME/Shell/battery.sh
+interval=30
+
+[wifi]
+command=$HOME/Shell/wificontrol.sh
+interval=10
+
