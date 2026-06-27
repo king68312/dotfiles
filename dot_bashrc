@@ -8,22 +8,31 @@ alias tt='oj t -c "-std=c++17 main.cpp"'
 alias atcoder='source ~/Atcoder/python/bin/activate && cd ~/Atcoder/abc/'
 alias t='g++ main.cpp && oj t'
 alias sub='acc submit -s -- -y'
-
+alias na='docker run -it -v /home/archking/nachos/NachOS-4.1a:/nachos my-nachos:latest'
+alias cl='claude'
+alias rd='rdesktop -u user287664 -p "uke09731ssd" AS434.macincloud.com:6000'
+alias astah='astah-pro  -nojvchk'
 if type trash-put &>/dev/null; then
   alias rm=trash-put
 fi
 
-#プロンプトの変更
-export PS1="[\[\e[1;$(if [ $(id -u) -eq 0 ]; then echo 31; else echo 32; fi)m\]\u\[\e[0m\]@\[\e[1;34m\]\h\[\e[0m\] \[\e[1;33m\]\w\[\e[0m\]]$ "
+#プロンプトの変更 (starshipに移行)
+#export PS1="[\[\e[1;$(if [ $(id -u) -eq 0 ]; then echo 31; else echo 32; fi)m\]\u\[\e[0m\]@\[\e[1;34m\]\h\[\e[0m\] \[\e[1;33m\]\w\[\e[0m\]]$ "
 #export PS1="[\[\e[1;$(if [ $(id -u) -eq 0 ]; then echo 91; else echo 92; fi)m\]\u\[\e[0m\]@\[\e[1;36m\]\h\[\e[0m\] \[\e[1;94m\]\w\[\e[0m\]]$ "
+
+# Starship prompt
 
 #DonwloadsをDownloadsに修正する関数
 function cd() {
-  if [ "$1" == "Donwloads" ]; then
+  if [ "$1" = "Donwloads" ]; then
     builtin cd "$HOME/Downloads"
   else
     builtin cd "$@"
   fi
+}
+
+function cadssh() {
+  ssh -Y -o ObscureKeystrokeTiming=no s1320126@cadsv.u-aizu.ac.jp xterm
 }
 
 #JAVA提出関数
@@ -38,6 +47,7 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 # コマンド履歴を拡張する
+export LANG=ja_JP.UTF-8
 export HISTSIZE=10000     # 保存する履歴の数
 export HISTFILESIZE=20000 # 履歴ファイルのサイズ
 shopt -s histappend       # 履歴を追記する
@@ -48,4 +58,36 @@ bind 'set completion-ignore-case on'
 bind 'set show-all-if-ambiguous on'
 bind 'set bell-style none'
 
-~/Shell/meigen.sh
+#Ctrl+r
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+
+# すぐに履歴ファイルに書き出す
+export PROMPT_COMMAND='history -a; history -n'
+
+# 複数セッション間で履歴を共有
+shopt -s histappend
+
+#~/Shell/meigen.sh
+
+#japanese
+#export LANG=ja_JP.UTF-8
+export LANG=en_US
+# kari
+#export GTK_IM_MODULE=fcitx
+#export QT_IM_MODULE=fcitx
+#export XMODIFIERS="@im=fcitx"
+#export PYENV_ROOT="$HOME/.pyenv"
+#export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
+LANG=en_US.UTF-8
+LC_ALL=en_US.UTF-8
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.npm-global/bin:$PATH"
+
+eval "$(starship init bash)"
+export PATH="$HOME/Downloads/Astah/usr/bin:$PATH"
+export GTK_USE_PORTAL=1
+
+[ -f "/home/archking/.ghcup/env" ] && . "/home/archking/.ghcup/env" # ghcup-envexport GTK_USE_PORTAL=1
