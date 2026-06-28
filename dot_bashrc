@@ -91,3 +91,5 @@ export PATH="$HOME/Downloads/Astah/usr/bin:$PATH"
 export GTK_USE_PORTAL=1
 
 [ -f "/home/archking/.ghcup/env" ] && . "/home/archking/.ghcup/env" # ghcup-envexport GTK_USE_PORTAL=1
+
+[ -f "/home/archking/.ghcup/env" ] && . "/home/archking/.ghcup/env" # ghcup-env

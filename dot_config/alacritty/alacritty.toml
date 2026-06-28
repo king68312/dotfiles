@@ -11,10 +11,9 @@ save_to_clipboard = true
 # Windowsやブラウザと全く同じ感覚で Ctrl+C / Ctrl+V が使えるようにします
 [[keyboard.bindings]]
 key = "C"
-mods = "Control"
-action = "Copy"
+mods = "Control|Shift"
+# コピーを実行した後に、notify-sendコマンドで右上に通知を出す
+# さらに、クリップボードの先頭15文字を切り取って通知に含めるようにしています
+chars = "\u0003" # Ctrl+Shift+Cの標準的な挙動
+command = { program = "sh", args = ["-c", "alacritty msg action Copy && notify-send 'Alacritty' \"Copied: $(xclip -o -selection clipboard | head -c 15)...\""] }
 
-[[keyboard.bindings]]
-key = "V"
-mods = "Control"
-action = "Paste"
