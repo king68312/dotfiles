@@ -96,8 +96,8 @@ bindsym $mod+Up focus up
 # button4 マウスホイール下回転
 # button5 マウスホイール上回転
 
-#bindsym --whole-window Ctrl+button1 exec --no-startup-id $HOME/Shell/moveworkspace.sh prev
-#bindsym --whole-window Ctrl+button3 exec --no-startup-id $HOME/Shell/moveworkspace.sh next
+bindsym --whole-window Ctrl+button1 exec --no-startup-id $HOME/Shell/moveworkspace.sh prev
+bindsym --whole-window Ctrl+button3 exec --no-startup-id $HOME/Shell/moveworkspace.sh next
 #bindsym --whole-window Ctrl+button4 exec --no-startup-id $HOME/Shell/moveworkspace.sh prev
 #bindsym --whole-window Ctrl+button5 exec --no-startup-id $HOME/Shell/moveworkspace.sh next
 
