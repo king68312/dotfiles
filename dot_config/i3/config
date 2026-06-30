@@ -84,8 +84,8 @@ bindsym F8 exec --no-startup-id $HOME/Shell/lockscreen.sh
 #bindsym $mod+Left exec --no-startup-id $HOME/Shell/moveworkspace.sh prev
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
-#bindsym Ctrl+Right exec --no-startup-id $HOME/Shell/moveworkspace.sh next
-#bindsym Ctrl+Left  exec --no-startup-id $HOME/Shell/moveworkspace.sh prev
+bindsym Ctrl+Right exec --no-startup-id $HOME/Shell/moveworkspace.sh next
+bindsym Ctrl+Left  exec --no-startup-id $HOME/Shell/moveworkspace.sh prev
 
 # Modキー(Windowsキー)を押しながらタッチパッドを2本指スクロール(上下)で切り替え
 #bindsym --whole-window $mod+button4 exec --no-startup-id $HOME/Shell/moveworkspace.sh prev
