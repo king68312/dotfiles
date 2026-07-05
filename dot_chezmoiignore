@@ -3,3 +3,4 @@
 .netrc
 .aws/*
 .gcloud/*
+.git/*
