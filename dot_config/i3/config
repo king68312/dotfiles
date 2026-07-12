@@ -77,7 +77,8 @@ bindsym $mod+d exec "rofi -modi drun,run -show drun"
 # change focus
 #bindsym $mod+j focus left
 #bindsym $mod+k focus down
-bindsym F8 exec --no-startup-id $HOME/Shell/lockscreen.sh
+#bindsym F8 exec --no-startup-id $HOME/Shell/lockscreen.sh
+bindsym F8 exec betterlockscreen -l blur
 #bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
