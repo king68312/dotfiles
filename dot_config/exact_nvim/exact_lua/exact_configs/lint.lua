@@ -8,7 +8,8 @@ return {
     lint.linters_by_ft = {
       lua = { "luacheck" },
       cpp = { "cpplint" },
-      hlint = { "hlint" },
+      c = { "cpplint" },
+      haskell = { "hlint" }, -- filetype は "hlint" ではなく "haskell"
       -- python = { "pylint" },
       -- javascript = { "eslint_d" },
     }
